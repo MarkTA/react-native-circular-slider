@@ -128,8 +128,8 @@ export default class CircularSlider extends PureComponent {
     return (
       <View style={[{ width: 300, height: 300, padding: 20 }, this.props.styles]} onLayout={this.onLayout}>
         <Svg
-          height={containerWidth}
-          width={containerWidth}
+          height={containerWidth+20}
+          width={containerWidth+20}
           ref={circle => this._circle = circle}
         >
           <Defs>
