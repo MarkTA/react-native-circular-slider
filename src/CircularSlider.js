@@ -126,7 +126,7 @@ export default class CircularSlider extends PureComponent {
     const stop = calculateArcCircle(segments - 1, segments, radius, startAngle, angleLength);
 
     return (
-      <View style={{ width: containerWidth, height: containerWidth }} onLayout={this.onLayout}>
+      <View style={{ width: containerWidth+40, height: containerWidth+40, padding: 20 }} onLayout={this.onLayout}>
         <Svg
           height={containerWidth}
           width={containerWidth}
@@ -194,10 +194,10 @@ export default class CircularSlider extends PureComponent {
               {...this._wakePanResponder.panHandlers}
             >
               <Circle
-                r={strokeWidth*2}
+                r={strokeWidth}
                 fill={gradientColorTo}
-                stroke={gradientColorFrom}
-                strokeWidth="1"
+                stroke={gradientColorTo}
+                strokeWidth="10"
               />
               {
                 stopIcon
@@ -212,12 +212,12 @@ export default class CircularSlider extends PureComponent {
               fill={gradientColorFrom}
               transform={{ translate: `${start.fromX}, ${start.fromY}` }}
             >
-              <Circle
+              {/* <Circle
                 r={(strokeWidth - 1) / 2}
                 fill={gradientColorFrom}
                 stroke={gradientColorFrom}
                 strokeWidth="1"
-              />
+              /> */}
               {
                 startIcon
               }
