@@ -93,8 +93,9 @@ export default class CircularSlider extends PureComponent {
         if (newAngleLength < 0) {
           newAngleLength += 2 * Math.PI;
         }
-
-        onUpdate({ startAngle, angleLength: newAngleLength });
+        if (newAngleLength <= 6) {
+          onUpdate({ startAngle, angleLength: newAngleLength });
+        }
       },
     });
   }
@@ -193,9 +194,9 @@ export default class CircularSlider extends PureComponent {
               {...this._wakePanResponder.panHandlers}
             >
               <Circle
-                r={(strokeWidth - 1) / 2}
-                fill={bgCircleColor}
-                stroke={gradientColorTo}
+                r={strokeWidth / 2}
+                fill={gradientColorTo}
+                stroke={gradientColorFrom}
                 strokeWidth="1"
               />
               {
@@ -213,7 +214,7 @@ export default class CircularSlider extends PureComponent {
             >
               <Circle
                 r={(strokeWidth - 1) / 2}
-                fill={bgCircleColor}
+                fill={gradientColorFrom}
                 stroke={gradientColorFrom}
                 strokeWidth="1"
               />
