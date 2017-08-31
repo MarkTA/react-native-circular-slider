@@ -67,8 +67,8 @@ export default class CircularSlider extends PureComponent {
     segments: 5,
     strokeWidth: 40,
     radius: 145,
-    gradientColorFrom: '#ff9800',
-    gradientColorTo: '#ffcf00',
+    gradientColorFrom: '#0D4964',
+    gradientColorTo: '#77A7BC',
     clockFaceColor: '#9d9d9d',
     bgCircleColor: '#171717',
   }
@@ -235,7 +235,6 @@ export default class CircularSlider extends PureComponent {
             <G
               fill={gradientColorFrom}
               transform={{ translate: `${start.fromX}, ${start.fromY}` }}
-              onPressIn={() => this.setState({ startAngle: startAngle - Math.PI / 2, angleLength: angleLength + Math.PI / 2 })}
               {...this._sleepPanResponder.panHandlers}
             >
               <Circle
