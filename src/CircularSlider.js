@@ -126,7 +126,7 @@ export default class CircularSlider extends PureComponent {
     const stop = calculateArcCircle(segments - 1, segments, radius, startAngle, angleLength);
 
     return (
-      <View style={{ width: 300, height: 300, padding: 20 }} onLayout={this.onLayout}>
+      <View style={[{ width: 300, height: 300, padding: 20 }, this.props.styles]} onLayout={this.onLayout}>
         <Svg
           height={containerWidth}
           width={containerWidth}
